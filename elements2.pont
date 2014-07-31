@@ -3,6 +3,7 @@
 ;+ (version "3.4.7")
 ;+ (build "Build 620")
 
+;+ protege pont file
 
 (defclass %3ACLIPS_TOP_LEVEL_SLOT_CLASS "Fake class to save top-level slot information"
 	(is-a USER)
