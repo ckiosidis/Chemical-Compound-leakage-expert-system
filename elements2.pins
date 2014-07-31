@@ -3,6 +3,8 @@
 ;+ (version "3.4.7")
 ;+ (build "Build 620")
 
+;+ protege pins file
+
 ([Acetic+acid] of  WeakAcid
 
 	(chemical+formula "CH3COOH")
