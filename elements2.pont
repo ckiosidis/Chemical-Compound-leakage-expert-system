@@ -1,0 +1,332 @@
+; Fri Dec 09 23:21:47 EET 2011
+; 
+;+ (version "3.4.7")
+;+ (build "Build 620")
+
+
+(defclass %3ACLIPS_TOP_LEVEL_SLOT_CLASS "Fake class to save top-level slot information"
+	(is-a USER)
+	(role abstract)
+	(single-slot chemical+formula
+		(type STRING)
+;+		(cardinality 0 1)
+		(create-accessor read-write))
+	(multislot manhole
+		(type INSTANCE)
+;+		(allowed-classes Manhole)
+		(create-accessor read-write))
+	(single-slot pH
+;+		(comment "\"pH is a measure of the acidity or basicity of an aqueous solution. Pure water is said to be neutral\"\nwikipedia.org")
+		(type FLOAT)
+		(range 0.0 14.0)
+;+		(cardinality 1 1)
+		(create-accessor read-write))
+	(single-slot name_
+;+		(comment "The specific name of the substance")
+		(type STRING)
+;+		(cardinality 1 1)
+		(create-accessor read-write))
+	(single-slot explosive
+;+		(comment "\"explosive, is a reactive substance that contains a great amount of potential energy that can produce an explosion if released suddenly, usually accompanied by the production of light, heat, sound, and pressure.\"\nwikipedia.org")
+		(type SYMBOL)
+		(allowed-values FALSE TRUE)
+;+		(cardinality 0 1)
+		(create-accessor read-write))
+	(single-slot specific+gravity
+;+		(comment "\"Relative density, or specific gravity, is the ratio of the density (mass of a unit volume) of a substance to the density of a given reference material.\" wikipedia")
+		(type FLOAT)
+		(range 0.9 1.1)
+		(default 1.0)
+;+		(cardinality 1 1)
+		(create-accessor read-write))
+	(multislot store+%26+manholes
+		(type INSTANCE)
+;+		(allowed-classes Store Manhole)
+		(create-accessor read-write))
+	(single-slot elements2_Class33
+		(type STRING)
+;+		(cardinality 0 1)
+		(create-accessor read-write))
+	(multislot substance
+;+		(comment "substance is an acid, a base or an oil")
+		(type INSTANCE)
+;+		(allowed-classes ChemicalCompound)
+		(cardinality 2 3)
+		(create-accessor read-write))
+	(single-slot colour
+		(type SYMBOL)
+		(allowed-values red white none)
+		(default none)
+;+		(cardinality 1 1)
+		(create-accessor read-write))
+	(multislot spectroscopy
+;+		(comment "The branch of science concerned with the investigation and measurement of spectra produced when matter interacts with or emits electromagnetic radiation")
+		(type SYMBOL)
+		(allowed-values Carbon Sulfur no_results Natrium Metal)
+		(default no_results)
+		(create-accessor read-write))
+	(single-slot radioactivity
+;+		(comment "Describes if the substance is radioactive, any substance that contains one or more radionuclides and whose activity or activity concentration cannot be disregarded as far as radiation protection is concerned.")
+		(type SYMBOL)
+		(allowed-values FALSE TRUE)
+		(default FALSE)
+;+		(cardinality 1 1)
+		(create-accessor read-write))
+	(single-slot solubility
+;+		(comment "\"Water is a bent, polar compound and possesses the ability to Hydrogen bond. As a result, it has unique solubility characteristics as a solvent and functions differently at different temperatures.\"\nwikpedia.org")
+		(type SYMBOL)
+		(allowed-values soluble insoluble)
+;+		(cardinality 0 1)
+		(create-accessor read-write))
+	(single-slot smell
+		(type SYMBOL)
+		(allowed-values choking vinegar none)
+		(default none)
+;+		(cardinality 1 1)
+		(create-accessor read-write))
+	(single-slot store+number
+;+		(comment "the number of the warehouse")
+		(type INTEGER)
+		(range 1 8)
+;+		(cardinality 1 1)
+		(create-accessor read-write))
+	(single-slot corrosive
+;+		(comment "\"A corrosive substance is one that will destroy or irreversibly damage another surface or substance with which it comes into contact. \"\nwikipedia.org")
+		(type SYMBOL)
+		(allowed-values FALSE TRUE)
+;+		(cardinality 0 1)
+		(create-accessor read-write))
+	(single-slot toxicity
+;+		(comment "\"Toxicity is the degree to which a substance can damage a living or non-living organisms.\"\nwikipedia.org")
+		(type SYMBOL)
+		(allowed-values FALSE TRUE)
+;+		(cardinality 0 1)
+		(create-accessor read-write)))
+
+(defclass ChemicalCompound "An abstract class that describes an acid, a base or an oil"
+	(is-a %3ASYSTEM-CLASS)
+	(role abstract)
+	(multislot spectroscopy
+;+		(comment "The branch of science concerned with the investigation and measurement of spectra produced when matter interacts with or emits electromagnetic radiation")
+		(type SYMBOL)
+		(allowed-values Carbon Sulfur no_results Natrium Metal)
+		(default no_results)
+		(create-accessor read-write))
+	(single-slot colour
+		(type SYMBOL)
+		(allowed-values red white none)
+		(default none)
+;+		(cardinality 1 1)
+		(create-accessor read-write))
+	(single-slot corrosive
+;+		(comment "\"A corrosive substance is one that will destroy or irreversibly damage another surface or substance with which it comes into contact. \"\nwikipedia.org")
+		(type SYMBOL)
+		(allowed-values FALSE TRUE)
+;+		(cardinality 0 1)
+		(create-accessor read-write))
+	(single-slot chemical+formula
+		(type STRING)
+;+		(cardinality 0 1)
+		(create-accessor read-write))
+	(single-slot smell
+		(type SYMBOL)
+		(allowed-values choking vinegar none)
+		(default none)
+;+		(cardinality 1 1)
+		(create-accessor read-write))
+	(single-slot specific+gravity
+;+		(comment "\"Relative density, or specific gravity, is the ratio of the density (mass of a unit volume) of a substance to the density of a given reference material.\" wikipedia")
+		(type FLOAT)
+		(range 0.9 1.1)
+		(default 1.0)
+;+		(cardinality 1 1)
+		(create-accessor read-write))
+	(single-slot radioactivity
+;+		(comment "Describes if the substance is radioactive, any substance that contains one or more radionuclides and whose activity or activity concentration cannot be disregarded as far as radiation protection is concerned.")
+		(type SYMBOL)
+		(allowed-values FALSE TRUE)
+		(default FALSE)
+;+		(cardinality 1 1)
+		(create-accessor read-write))
+	(single-slot %3ANAME
+		(type STRING)
+;+		(cardinality 0 1)
+		(create-accessor read-write))
+	(single-slot solubility
+;+		(comment "\"Water is a bent, polar compound and possesses the ability to Hydrogen bond. As a result, it has unique solubility characteristics as a solvent and functions differently at different temperatures.\"\nwikpedia.org")
+		(type SYMBOL)
+		(allowed-values soluble insoluble)
+;+		(cardinality 0 1)
+		(create-accessor read-write))
+	(single-slot name_
+;+		(comment "The specific name of the substance")
+		(type STRING)
+;+		(cardinality 1 1)
+		(create-accessor read-write))
+	(single-slot pH
+;+		(comment "\"pH is a measure of the acidity or basicity of an aqueous solution. Pure water is said to be neutral\"\nwikipedia.org")
+		(type FLOAT)
+		(range 0.0 14.0)
+;+		(cardinality 1 1)
+		(create-accessor read-write)))
+
+(defclass Acid "\"An acid (from the Latin acidus is a substance which reacts with a base. Commonly, acids can be identified as tasting sour, reacting with metals such as calcium, and bases like sodium carbonate. Aqueous acids have a pH of less than 7, where an acid of lower pH is typically stronger, and turn blue litmus paper red.\"\nwikipedia.org"
+	(is-a ChemicalCompound)
+	(role abstract)
+	(single-slot pH
+;+		(comment "\"pH is a measure of the acidity or basicity of an aqueous solution. Pure water is said to be neutral\"\nwikipedia.org")
+		(type FLOAT)
+		(range 0.0 5.99999)
+;+		(cardinality 1 1)
+		(create-accessor read-write)))
+
+(defclass StrongAcid "\"A strong acid is an acid that ionizes completely in an aqueous solution by losing one proton\"\nwikipedia.org"
+	(is-a Acid)
+	(role concrete)
+	(single-slot corrosive
+;+		(comment "\"A corrosive substance is one that will destroy or irreversibly damage another surface or substance with which it comes into contact. \"\nwikipedia.org")
+		(type SYMBOL)
+		(allowed-values FALSE TRUE)
+;+		(value TRUE)
+;+		(cardinality 0 1)
+		(create-accessor read-write))
+	(single-slot pH
+;+		(comment "\"pH is a measure of the acidity or basicity of an aqueous solution. Pure water is said to be neutral\"\nwikipedia.org")
+		(type FLOAT)
+		(range 0.0 2.9999)
+;+		(cardinality 1 1)
+		(create-accessor read-write)))
+
+(defclass WeakAcid "\"A strong base is a basic chemical compound that is able to deprotonate very weak acids in an acid-base reaction.\"\nwikipedia.org"
+	(is-a Acid)
+	(role concrete)
+	(single-slot corrosive
+;+		(comment "\"A corrosive substance is one that will destroy or irreversibly damage another surface or substance with which it comes into contact. \"\nwikipedia.org")
+		(type SYMBOL)
+		(allowed-values FALSE TRUE)
+;+		(value FALSE)
+;+		(cardinality 0 1)
+		(create-accessor read-write))
+	(single-slot pH
+;+		(comment "\"pH is a measure of the acidity or basicity of an aqueous solution. Pure water is said to be neutral\"\nwikipedia.org")
+		(type FLOAT)
+		(range 3.0 5.99999)
+;+		(cardinality 1 1)
+		(create-accessor read-write)))
+
+(defclass Base "\"A base in chemistry is a substance that can accept hydrogen ions (protons) or more generally, donate electron pairs. \"\nwikipedia.org"
+	(is-a ChemicalCompound)
+	(role abstract)
+	(single-slot pH
+;+		(comment "\"pH is a measure of the acidity or basicity of an aqueous solution. Pure water is said to be neutral\"\nwikipedia.org")
+		(type FLOAT)
+		(range 8.0 14.0)
+;+		(cardinality 1 1)
+		(create-accessor read-write)))
+
+(defclass StrongBase
+	(is-a Base)
+	(role concrete)
+	(single-slot corrosive
+;+		(comment "\"A corrosive substance is one that will destroy or irreversibly damage another surface or substance with which it comes into contact. \"\nwikipedia.org")
+		(type SYMBOL)
+		(allowed-values FALSE TRUE)
+;+		(value TRUE)
+;+		(cardinality 0 1)
+		(create-accessor read-write))
+	(single-slot pH
+;+		(comment "\"pH is a measure of the acidity or basicity of an aqueous solution. Pure water is said to be neutral\"\nwikipedia.org")
+		(type FLOAT)
+		(range 11.0 14.0)
+;+		(cardinality 1 1)
+		(create-accessor read-write)))
+
+(defclass WeakBase "\"In chemistry, a weak base is a chemical base that does not ionize fully in an aqueous solution.\"\nwikipedia.org"
+	(is-a Base)
+	(role concrete)
+	(single-slot corrosive
+;+		(comment "\"A corrosive substance is one that will destroy or irreversibly damage another surface or substance with which it comes into contact. \"\nwikipedia.org")
+		(type SYMBOL)
+		(allowed-values FALSE TRUE)
+;+		(value FALSE)
+;+		(cardinality 0 1)
+		(create-accessor read-write))
+	(single-slot pH
+;+		(comment "\"pH is a measure of the acidity or basicity of an aqueous solution. Pure water is said to be neutral\"\nwikipedia.org")
+		(type FLOAT)
+		(range 8.0 10.9999)
+;+		(cardinality 1 1)
+		(create-accessor read-write)))
+
+(defclass Oil "\"An oil is any substance that is liquid at ambient temperatures and does not mix with water but may mix with other oils and organic solvents. This general definition includes vegetable oils, volatile essential oils, petrochemical oils, and synthetic oils.\"\nwikipedia.org"
+	(is-a ChemicalCompound)
+	(role concrete)
+	(single-slot toxicity
+;+		(comment "\"Toxicity is the degree to which a substance can damage a living or non-living organisms.\"\nwikipedia.org")
+		(type SYMBOL)
+		(allowed-values FALSE TRUE)
+;+		(cardinality 0 1)
+		(create-accessor read-write))
+	(single-slot solubility
+;+		(comment "\"Water is a bent, polar compound and possesses the ability to Hydrogen bond. As a result, it has unique solubility characteristics as a solvent and functions differently at different temperatures.\"\nwikpedia.org")
+		(type SYMBOL)
+		(allowed-values soluble insoluble)
+;+		(value insoluble)
+;+		(cardinality 1 1)
+		(create-accessor read-write))
+	(single-slot pH
+;+		(comment "\"pH is a measure of the acidity or basicity of an aqueous solution. Pure water is said to be neutral\"\nwikipedia.org")
+		(type FLOAT)
+		(range 6.0 7.999999)
+;+		(cardinality 1 1)
+		(create-accessor read-write))
+	(single-slot explosive
+;+		(comment "\"explosive, is a reactive substance that contains a great amount of potential energy that can produce an explosion if released suddenly, usually accompanied by the production of light, heat, sound, and pressure.\"\nwikipedia.org")
+		(type SYMBOL)
+		(allowed-values FALSE TRUE)
+;+		(cardinality 0 1)
+		(create-accessor read-write)))
+
+(defclass Store "Contains substances"
+	(is-a %3ASYSTEM-CLASS)
+	(role concrete)
+	(single-slot %3ANAME
+		(type STRING)
+;+		(cardinality 0 1)
+		(create-accessor read-write))
+	(single-slot store+number
+;+		(comment "the number of the warehouse")
+		(type INTEGER)
+		(range 1 8)
+;+		(cardinality 1 1)
+		(create-accessor read-write))
+	(multislot substance
+;+		(comment "substance is an acid, a base or an oil")
+		(type INSTANCE)
+;+		(allowed-classes ChemicalCompound)
+		(cardinality 2 3)
+		(create-accessor read-write)))
+
+(defclass Manhole
+	(is-a %3ASYSTEM-CLASS)
+	(role concrete)
+	(multislot store+%26+manholes
+		(type INSTANCE)
+;+		(allowed-classes Store Manhole)
+		(create-accessor read-write))
+	(single-slot %3ANAME
+		(type STRING)
+;+		(cardinality 0 1)
+		(create-accessor read-write)))
+
+(defclass Monitoring+Station
+	(is-a %3ASYSTEM-CLASS)
+	(role concrete)
+	(single-slot %3ANAME
+		(type STRING)
+;+		(cardinality 0 1)
+		(create-accessor read-write))
+	(multislot manhole
+		(type INSTANCE)
+;+		(allowed-classes Manhole)
+		(create-accessor read-write)))

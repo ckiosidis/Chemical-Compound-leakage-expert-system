@@ -1,0 +1,247 @@
+; Fri Dec 09 23:21:47 EET 2011
+; 
+;+ (version "3.4.7")
+;+ (build "Build 620")
+
+([Acetic+acid] of  WeakAcid
+
+	(chemical+formula "CH3COOH")
+	(colour none)
+	(name "Acetic acid")
+	(pH 3.0)
+	(radioactivity FALSE)
+	(smell vinegar)
+	(specific+gravity 1.0)
+	(spectroscopy no_results))
+
+([Aluminium+hydroxid] of  WeakBase
+
+	(chemical+formula "Al(OH)3")
+	(colour white)
+	(name "Aluminium hydroxid")
+	(pH 9.5)
+	(radioactivity FALSE)
+	(smell none)
+	(specific+gravity 1.1)
+	(spectroscopy Metal))
+
+([Carbonic+acid] of  WeakAcid
+
+	(chemical+formula "H2CO3")
+	(colour none)
+	(name "Carbonic acid")
+	(pH 5.7)
+	(radioactivity FALSE)
+	(smell none)
+	(specific+gravity 1.0)
+	(spectroscopy Carbon))
+
+([Chromogen+23] of  WeakBase
+
+	(colour red)
+	(name "Chromogen 23")
+	(pH 10.0)
+	(radioactivity FALSE)
+	(smell none)
+	(specific+gravity 0.9)
+	(spectroscopy no_results))
+
+([elements2_Class10] of  %3AINSTANCE-ANNOTATION
+
+	(%3ACREATION-TIMESTAMP "2011.11.23 19:09:03.235 EET")
+	(%3ACREATOR "antwnis"))
+
+([Hydrochloric+acid] of  StrongAcid
+
+	(chemical+formula "HCl")
+	(colour none)
+	(name "Hydrochloric acid")
+	(pH 1.2)
+	(radioactivity FALSE)
+	(smell none)
+	(specific+gravity 1.0)
+	(spectroscopy no_results))
+
+([Manhole+1] of  Manhole
+
+	(store+%26+manholes [store+1]))
+
+([Manhole+10] of  Manhole
+
+	(store+%26+manholes
+		[Manhole+4]
+		[Manhole+5]))
+
+([Manhole+11] of  Manhole
+
+	(store+%26+manholes
+		[Manhole+6]
+		[Manhole+7]))
+
+([Manhole+12] of  Manhole
+
+	(store+%26+manholes
+		[Manhole+9]
+		[Manhole+10]))
+
+([Manhole+13] of  Manhole
+
+	(store+%26+manholes
+		[Manhole+11]
+		[Manhole+8]))
+
+([Manhole+2] of  Manhole
+
+	(store+%26+manholes [store+2]))
+
+([Manhole+3] of  Manhole
+
+	(store+%26+manholes [store+3]))
+
+([Manhole+4] of  Manhole
+
+	(store+%26+manholes [store+4]))
+
+([Manhole+5] of  Manhole
+
+	(store+%26+manholes [store+5]))
+
+([Manhole+6] of  Manhole
+
+	(store+%26+manholes [store+6]))
+
+([Manhole+7] of  Manhole
+
+	(store+%26+manholes [store+7]))
+
+([Manhole+8] of  Manhole
+
+	(store+%26+manholes [store+8]))
+
+([Manhole+9] of  Manhole
+
+	(store+%26+manholes
+		[Manhole+1]
+		[Manhole+2]
+		[Manhole+3]))
+
+([Monitoring+station] of  Monitoring+Station
+
+	(manhole
+		[Manhole+13]
+		[Manhole+12]))
+
+([Petrol] of  Oil
+
+	(colour none)
+	(explosive TRUE)
+	(name "Petrol")
+	(pH 7.0)
+	(radioactivity FALSE)
+	(smell none)
+	(specific+gravity 0.9)
+	(spectroscopy Carbon))
+
+([Rubidium+hydroxide] of  WeakBase
+
+	(chemical+formula "RbOH")
+	(colour none)
+	(name "Rubidium hydroxide")
+	(pH 10.0)
+	(radioactivity TRUE)
+	(smell none)
+	(specific+gravity 1.1)
+	(spectroscopy Metal))
+
+([Sodium+hydroxide] of  StrongBase
+
+	(chemical+formula "NaOH")
+	(colour none)
+	(name "Sodium hydroxide")
+	(pH 14.0)
+	(radioactivity FALSE)
+	(smell none)
+	(specific+gravity 1.0)
+	(spectroscopy Natrium))
+
+([store+1] of  Store
+
+	(store+number 1)
+	(substance
+		[Sulphuric+acid]
+		[Petrol]))
+
+([store+2] of  Store
+
+	(store+number 2)
+	(substance
+		[Hydrochloric+acid]
+		[Acetic+acid]))
+
+([store+3] of  Store
+
+	(store+number 3)
+	(substance
+		[Rubidium+hydroxide]
+		[Transformer+oil]))
+
+([store+4] of  Store
+
+	(store+number 4)
+	(substance
+		[Carbonic+acid]
+		[Acetic+acid]
+		[Petrol]))
+
+([store+5] of  Store
+
+	(store+number 5)
+	(substance
+		[Chromogen+23]
+		[Sulphuric+acid]
+		[Petrol]))
+
+([store+6] of  Store
+
+	(store+number 6)
+	(substance
+		[Aluminium+hydroxid]
+		[Transformer+oil]
+		[Carbonic+acid]))
+
+([store+7] of  Store
+
+	(store+number 7)
+	(substance
+		[Sulphuric+acid]
+		[Hydrochloric+acid]))
+
+([store+8] of  Store
+
+	(store+number 8)
+	(substance
+		[Acetic+acid]
+		[Carbonic+acid]
+		[Sodium+hydroxide]))
+
+([Sulphuric+acid] of  StrongAcid
+
+	(chemical+formula "H2SO4")
+	(colour none)
+	(name "Sulphuric acid")
+	(pH 0.3)
+	(radioactivity FALSE)
+	(smell none)
+	(specific+gravity 1.0)
+	(spectroscopy Sulfur))
+
+([Transformer+oil] of  Oil
+
+	(colour none)
+	(name "Transformer oil")
+	(pH 7.0)
+	(radioactivity FALSE)
+	(smell none)
+	(specific+gravity 1.0)
+	(spectroscopy Carbon)
+	(toxicity TRUE))
