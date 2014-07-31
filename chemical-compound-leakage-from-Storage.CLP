@@ -5,6 +5,15 @@
 ;+ Second Project on Knowledge Systems Course
 
 
+;+ Initially the program asks for the measurements the user is gonna give.
+;+ For every measurement a fact is being created and then the program asks for the input values.
+;+ Then the incrimination of the Chemical Compounds begins for each of the above measurements.
+;+ After the incrimination of the Chemical Compounds, the incrimination of the Storages that contain
+;+ the Chemical Compounds begin, as well as the Manholes that are connected to the Storages.
+;+ the rule find-leak is being fired until there is no Manhole that is connected to more than 1 Suspect Manholes.
+;+ In the end the Suspect Manholes Storages and Chemical Compounds are printed.
+
+
 ;+ pons file
 
 
